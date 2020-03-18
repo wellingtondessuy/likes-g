@@ -9,17 +9,16 @@
             </md-field>
             <md-field class="login-input" :class="passErrorClass">
                 <label>Senha</label>
-                <md-input v-model="pass" name="pass"></md-input>
+                <md-input type="password" v-model="pass" name="pass"></md-input>
                 <span class="md-error">Campo obrigatório!</span>
             </md-field>
-            <md-button type="submit" class="md-raised md-primary">Logar</md-button>
+            <md-button type="submit" v-on:click="login" class="md-raised md-primary">Logar</md-button>
         </form>
     </div>
 </template>
 <script>
 
 export default {
-    props: [ 'csrfToken' ],
     data: () => {
         return {
             user: '',
@@ -41,8 +40,7 @@ export default {
         }
     },
     methods: {
-        login () {
-            console.log('dshajdha')
+        login (e) {
             if (!this.user || this.user.trim() == '')
                 this.invalidUser = true
             else this.invalidUser = false
@@ -51,7 +49,8 @@ export default {
                 this.invalidPass = true
             else this.invalidPass = false
 
-
+            if (this.invalidUser || this.invalidPass)
+                e.preventDefault()
         }
     }
 }

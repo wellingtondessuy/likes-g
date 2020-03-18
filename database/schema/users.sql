@@ -9,3 +9,4 @@ CREATE TABLE `users` (
 );
 
 INSERT INTO users SET id = 1, user = 'garupa', pass = '$2y$10$i/abVbNCcdHmO9K5kJ00Tu0k2zRu7FAWuAGgHRrL2UiG.PZOp2t7m', created_at = '2020-03-18 07:12:31', updated_at = '2020-03-18 07:12:31';
+INSERT INTO users SET id = 2, user = 'garupa2', pass = '$2y$10$i/abVbNCcdHmO9K5kJ00Tu0k2zRu7FAWuAGgHRrL2UiG.PZOp2t7m', created_at = '2020-03-18 07:12:31', updated_at = '2020-03-18 07:12:31';

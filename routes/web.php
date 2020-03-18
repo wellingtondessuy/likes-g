@@ -20,7 +20,10 @@ Route::get('/login', 'AuthorizationController@index');
 Route::post('/authorization/login', 'AuthorizationController@login');
 
 Route::group(['middleware' => ['auth']], function () {
+    
+    Route::post('/authorization/logout', 'AuthorizationController@logout');
 
     Route::get('/home', 'HomeController@index');
+    Route::post('/home/action', 'HomeController@action');
 
 });

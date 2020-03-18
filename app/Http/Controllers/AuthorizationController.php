@@ -51,4 +51,13 @@ class AuthorizationController extends Controller
 
     }
 
+    public function logout() {
+
+        Session::forget('auth_token');
+        Session::forget('user_id');
+
+        return redirect('/login');
+
+    }
+
 }
